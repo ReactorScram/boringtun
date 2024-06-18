@@ -3,15 +3,9 @@
 //! uses a timer which accounts for time when the system is asleep
 use std::time::Duration;
 
-#[cfg(target_os = "windows")]
 mod windows;
-#[cfg(target_os = "windows")]
 use windows as inner;
 
-#[cfg(unix)]
-mod unix;
-#[cfg(unix)]
-use unix as inner;
 
 /// A measurement of a monotonically nondecreasing clock.
 /// Opaque and useful only with [`Duration`].
